@@ -12,7 +12,7 @@
 				while ( have_posts() ) : //ループ開始
 					the_post();
 					
-					get_template_part( 'excerpt' ); //コンテンツを表示するテンプレートを読み込む
+					get_template_part( 'template-parts/excerpt-diary' );
 					
 				endwhile; //ループ終了
 
