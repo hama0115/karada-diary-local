@@ -2,25 +2,14 @@
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title">ホーム</h1>
-				</header><!-- .page-header -->
+			<?php //フロントページに指定した固定ページを表示するメインループを開始 
+      if ( have_posts() ) : ?>
 
 				<?php
-				while ( have_posts() ) : //ループ開始
-					the_post();
-					
-					get_template_part( 'excerpt' ); //コンテンツを表示するテンプレートを読み込む
+				while ( have_posts() ) : the_post();//ループ開始
+          get_template_part( 'content' ); //コンテンツを表示するテンプレートを読み込む
 					
 				endwhile; //ループ終了
-
-				//前後のページへのリンク。
-				the_posts_pagination( [
-					'prev_text' => '&larr;',
-					'next_text' => '&rarr;',
-				] );
 
 			//コンテンツが無い場合
 			else :
