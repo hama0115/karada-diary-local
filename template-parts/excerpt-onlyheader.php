@@ -9,7 +9,7 @@
 	</figure><!-- .post-thumbnail -->
 
 	<footer class="entry-footer">
-		<span class="cat-links">カテゴリー: <?php the_category( ', ' ); //カテゴリーを表示 ?></span>
+		<span class="cat-links">タグ: <?php the_terms(get_the_ID(), 'personal'); //カスタムタクソノミーを表示 ?></span>
 		<?php the_tags( '<span class="tags-links">タグ: ', ', ', '</span>' ); //タグを表示 ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

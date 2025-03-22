@@ -9,8 +9,7 @@
 				</header><!-- .page-header -->
 
 				<?php
-				while ( have_posts() ) : //ループ開始
-					the_post();
+				while ( have_posts() ) : the_post(); //ループ開始
 					
 					get_template_part( 'excerpt' ); //コンテンツを表示するテンプレートを読み込む
 					
@@ -26,8 +25,7 @@
 			else :
 				echo '記事はありません。';
 
-			endif;
-			?>
+			endif;	?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 

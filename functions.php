@@ -25,19 +25,10 @@ function sample_child_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'sample_child_body_classes' );
 
-/* とりあえず無効化
-//スクリプト、スタイルシートを追加する
-function sampletheme_scripts() {
-	wp_enqueue_style( 'sampletheme-style', get_stylesheet_uri(), [], wp_get_theme()->get( 'Version' ) );
-
-	if ( has_nav_menu( 'menu-1' ) ) {
-		wp_enqueue_script( 'sampletheme-touch-navigation', get_theme_file_uri( '/js/touch-keyboard-navigation.js' ), [], '1.1', true );
-		wp_enqueue_script( 'toggle-menu-button', get_theme_file_uri( '/js/toggle-menu.js' ), [], '1.1', true );
+function add_front_page_class( $classes ) {
+	if ( is_front_page() ) { //フロントページの場合に「front-page」クラスを追加
+		$classes[] = 'front-page';
 	}
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	return $classes;
 }
-add_action( 'wp_enqueue_scripts', 'sampletheme_scripts' );
-*/
+add_filter( 'body_class', 'add_front_page_class' );
