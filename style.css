@@ -230,9 +230,6 @@ article .entry-content a {
 
 article .entry-header {
 	text-align: center;
-	
-	/* 親テーマのmarginを消す */
-	margin: 0;
 }
 
 .post-categories {

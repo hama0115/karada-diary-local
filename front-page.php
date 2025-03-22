@@ -18,7 +18,7 @@
 			endif;
 			?>
 
-      <section class="latest-posts"> <!-- 最新の記事を取得するサブループ開始 -->
+      <div class="latest-posts"> <!-- 最新の記事を取得するサブループ開始 -->
         <?php
         $args = array(
           'post_type' => 'post', //通常の「投稿」を取得
@@ -27,9 +27,9 @@
         $new_query = new WP_Query($args);
         if ( $new_query->have_posts() ) : ?>
 
-          <header class="page-header">
-            <h2 class="page-title">最新記事</h2><!-- フロントページのためh2 -->
-          </header>
+        <header class="page-header">
+          <h2 class="page-title">最新記事</h2><!-- フロントページのためh2 -->
+        </header>
 
         <?php
         while ( $new_query->have_posts() ) : $new_query->the_post(); //ループ開始
@@ -50,9 +50,9 @@
         echo '記事はありません。';
 
         endif;	?>
-      </section>
+      </div>
 
-      <section class="diary-posts"> <!-- カスタム投稿タイプ(「日記」)を取得するサブループ開始 -->
+      <div class="diary-posts"> <!-- カスタム投稿タイプ(「日記」)を取得するサブループ開始 -->
         <?php
         $args = array(
           'post_type' => 'diary',
@@ -61,9 +61,9 @@
         $new_query = new WP_Query($args);
         if ( $new_query->have_posts() ) : ?>
 
-          <header class="page-header">
+        <header class="page-header">
           <h2 class="page-title">日々の日記</h2><!-- フロントページのためh2 -->
-          </header>
+        </header>
 
         <?php
         while ( $new_query->have_posts() ) : $new_query->the_post(); //ループ開始
@@ -84,7 +84,7 @@
         echo '記事はありません。';
 
         endif;	?>
-      </section>
+      </div>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 

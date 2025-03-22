@@ -1,3 +1,5 @@
+/* ループごとのタイトルをスタイリング */
 .front-page .page-title {
   text-align: center;
+  border-bottom: none;
 }
