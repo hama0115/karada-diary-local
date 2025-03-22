@@ -11,7 +11,19 @@ function sample_child_setup() {
 }
 add_action( 'after_setup_theme', 'sample_child_setup' );
 
+//css,jsの読み込み
 function enqueue_child_scripts() {
+	
+	//共通のcssを読み込み
+	wp_enqueue_style( 'reset.css', get_stylesheet_directory_uri() . '/assets/css/reset.css' );
+
+	//共通のjsを読み込み
+
+	if ( has_nav_menu( 'menu-1' ) ) {
+	wp_enqueue_script( 'hamburger-menu', get_stylesheet_directory_uri() . '/js/toggle-menu-button.js', [], '1.0', true );
+	}
+
+	//front-pageのみ読み込み
 	if( is_front_page()) {
 		wp_enqueue_style( 'front-page-style', get_stylesheet_directory_uri() . '/assets/css/front-page.css' );
 	}
