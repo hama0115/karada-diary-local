@@ -18,6 +18,7 @@ function enqueue_child_scripts() {
 	wp_enqueue_style( 'reset.css', get_stylesheet_directory_uri() . '/assets/css/reset.css' );
 
 	//共通のjsを読み込み
+	wp_enqueue_script( 'adobefont', get_stylesheet_directory_uri() . '/js/adobefont.js', [], '1.0', true );
 
 	if ( has_nav_menu( 'menu-1' ) ) {
 	wp_enqueue_script( 'hamburger-menu', get_stylesheet_directory_uri() . '/js/toggle-menu-button.js', [], '1.0', true );
