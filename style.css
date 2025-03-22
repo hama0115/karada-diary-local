@@ -7,7 +7,7 @@ version: 1.0
 
 /*
 モバイルファーストで記述
-localの追加CSSを変更→当ファイルへコピペ→「webproduction」内からgithubへ
+当ファイルでlocalで開発→「webproduction」内からgithubへ
 セレクタごとにメディアクエリを書くスタイルでやってみる
 */
 
